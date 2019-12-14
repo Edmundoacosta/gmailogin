@@ -7,8 +7,13 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <div *ngIf="(user | async) || {} as user">
+		<ion-button *ngIf="!user.uid" (click)="googleLogin()">Login with google</ion-button>
+	</div>
+	<div *ngIf="user">
+		Ya estas logueado con UID: {{userData.username}}
+	</div>
+	<div>
+		<ion-button (click)="singOut()">Cerrar sesión</ion-button>
+	</div>
 </ion-content>

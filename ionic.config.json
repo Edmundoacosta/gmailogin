@@ -1,5 +1,7 @@
 {
   "name": "gmailogin",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
